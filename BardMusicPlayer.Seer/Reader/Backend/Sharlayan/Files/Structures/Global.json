@@ -1,15 +1,26 @@
 {
+    "ChatLogPointers": {
+        "OffsetArrayStart": 52,
+        "OffsetArrayPos": 60,
+        "OffsetArrayEnd": 68,
+        "LogStart": 76,
+        "LogNext": 84,
+        "LogEnd": 92
+    },
     "CurrentPlayer": {
-        "SourceSize": 650,
+        "SourceSize": 250,
         "JobID": 126,
+        // BMP
         "ID": 100,
         "Name": 1
+        // END BMP
     },
     "PartyMember": {
-        "SourceSize": 560,
-        "ID": 424,
-        "Name": 452
+        "SourceSize": 928,
+        "ID": 32,
+        "Name": 60
     },
+    // BMP
     "PerformanceInfo": {
         "SourceSize": 28,
         "Status": 19,
@@ -19,8 +30,9 @@
         "SourceSize": 16,
         "Offset": 0
     },
-    "CharacterId": {
+    "CharacterId": { // Known as ConfigId in Seer. Used for DatReader.
         "SourceSize": 32,
         "Offset": 0
     }
+    // END BMP
 }

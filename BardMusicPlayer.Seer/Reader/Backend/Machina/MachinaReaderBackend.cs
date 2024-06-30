@@ -4,6 +4,7 @@
  */
 
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using BardMusicPlayer.Seer.Events;
 using BardMusicPlayer.Seer.Utilities;
 
@@ -48,7 +49,8 @@ internal class MachinaReaderBackend : IReaderBackend
                     timeStamp *= 1000;
 
                     //string hexString = BitConverter.ToString(message);
-                    //System.Diagnostics.Debug.WriteLine("MMMM" + hexString + " " + message.Length.ToString());
+                    //System.Diagnostics.Debug.WriteLine(message + " " + message.Length.ToString());
+
                     if (!(ActorIdTools.RangeOkay(myActorId) && ActorIdTools.RangeOkay(otherActorId))) 
                         continue;
 
@@ -76,11 +78,17 @@ internal class MachinaReaderBackend : IReaderBackend
                         case 672:
                             _packet.Size672(timeStamp, otherActorId, myActorId, message); //[6.51]Handles Homeworld and Playername --DALAMUD
                             break;
+                        case 688:
+                            _packet.Size688(timeStamp, otherActorId, myActorId, message); //[7.0]Handles Homeworld and Playername --DALAMUD
+                            break;
                         case 928:
                             _packet.Size928(timeStamp, otherActorId, myActorId, message); //Handles group data
                             break;
                         case 3576:
                             _packet.Size3576(timeStamp, otherActorId, myActorId, message);
+                            break;
+                        case 3704:
+                            _packet.Size3704(timeStamp, otherActorId, myActorId, message);
                             break;
                         default:
                             ReaderHandler.Game.PublishEvent(new BackendExceptionEvent(EventSource.Machina,
@@ -90,6 +98,7 @@ internal class MachinaReaderBackend : IReaderBackend
                 }
                 catch (Exception ex)
                 {
+                    Debug.WriteLine("Error in Machina Reader Backend");
                     ReaderHandler.Game.PublishEvent(new BackendExceptionEvent(EventSource.Machina, ex));
                 }
             }

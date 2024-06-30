@@ -148,4 +148,9 @@ public class BmpPigeonhole : JsonSettings.JsonSettings
     /// Midi download path
     /// </summary>
     public virtual string MidiDownloadPath { get; set; } = "";
+
+    /// <summary>
+    /// Play HomeWorld cache
+    /// </summary>
+    public virtual string PlayerHomeWorldCache { get; set; } = "";
 }

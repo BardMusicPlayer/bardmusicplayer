@@ -22,9 +22,9 @@
     <AssemblyTitle>BardMusicPlayer</AssemblyTitle>
     <Company>BardMusicPlayer</Company>
     <Product>BardMusicPlayer</Product>
-    <Authors>Meowchestra, MoogleTroupe, GiR_Zippo</Authors>
-    <Copyright>Copyright © 2023</Copyright>
-    <Version>2.1.0.4</Version>
+    <Authors>KupoBeat, Meowchestra, GiR_Zippo</Authors>
+    <Copyright>Copyright © 2024</Copyright>
+    <Version>2.1.0.6</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
