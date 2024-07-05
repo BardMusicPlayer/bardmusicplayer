@@ -338,14 +338,20 @@ public sealed class BmpSong
                         };
                     }
 
-                    //last try with the program number
-                    if (string.IsNullOrEmpty(match.Groups[1].Value) || trackName.Equals("Unknown") || trackName.Equals("None"))
+                    //last try with the program number. Uses the first program number after or with the first note. For fixing Program:ElectricGuitar
+                    if ((string.IsNullOrEmpty(match.Groups[1].Value)) || trackName.Equals("Unknown") || trackName.Equals("None"))
                     {
-                        var prog = originalChunk.Events.OfType<ProgramChangeEvent>().FirstOrDefault();
-                        if (prog != null)
-                            trackName = Instrument.ParseByProgramChange(prog.ProgramNumber).Name;
+                        TimedEvent noteEvent = originalChunk.GetTimedEvents().FirstOrDefault(n => n.Event.EventType == MidiEventType.NoteOn);
+                        if (noteEvent != default)
+                        {
+                            TimedEvent progEvent = originalChunk.GetTimedEvents().LastOrDefault(n => n.Event.EventType == MidiEventType.ProgramChange && n.Time <= noteEvent.Time);
+                            if (progEvent != default)
+                            {
+                                var progAfterNote = progEvent.Event as ProgramChangeEvent;
+                                trackName = Instrument.ParseByProgramChange(progAfterNote.ProgramNumber).Name;
+                            }
+                        }
                     }
-
                 }
                 //If we have a lyrics tracks
                 if (o_trackName.StartsWith("Lyrics:"))
