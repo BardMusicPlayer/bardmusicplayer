@@ -30,7 +30,7 @@ namespace BardMusicPlayer.Seer.Reader.Backend.Machina
                 var partyMembers = new SortedDictionary<uint, string>();
                 var currentPartyLead = new KeyValuePair<uint, string>();
 
-                byte currentLeader = (byte)BitConverter.ToInt16(message, 3697);
+                byte currentLeader = (byte)BitConverter.ToInt16(message, 3696);
                 for (var i = 0; i <= 3136; i += 456)
                 {
                     //Check for empty column
