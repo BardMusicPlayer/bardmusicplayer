@@ -492,9 +492,9 @@ public class Performer : INotifyPropertyChanged
             return;
         }
 
-        _hook.SendSyncKeybind(game.NavigationMenuKeys[NavigationMenuKey.OK]);
-        Task.Delay(200);
-        _hook.SendSyncKeybind(game.NavigationMenuKeys[NavigationMenuKey.OK]);
+        ////_hook.sendsynckeybind(game.navigationmenukeys[navigationmenukey.ok]);
+        ////task.delay(200);
+        ////_hook.sendsynckeybind(game.navigationmenukeys[navigationmenukey.ok]);
     }
 
     /// <summary>

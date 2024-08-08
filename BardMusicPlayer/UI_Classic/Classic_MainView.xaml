@@ -615,6 +615,7 @@
                         Content="Send Ensemble"
                         Padding="0" Margin="0,0,0,0"
                         Click="RdyCheck_Click" />
+                <TextBlock Text="Aki's Code!!!!" Grid.Column="2" Margin="134,0,-134,0"></TextBlock>
             </Grid>
             <Grid Grid.Row="3" Grid.Column="2">
                 <Button Grid.Column="0" Content="All Tracks" x:Name="AllTracksButton" Click="all_tracks_button_Click"
