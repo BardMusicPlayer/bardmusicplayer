@@ -67,8 +67,6 @@ namespace BardMusicPlayer.Seer.Reader.Backend.Machina
                 if (partyMembers.Count == 1)
                     // No party members nearby. Seer only accepts an empty collection for this case.
                     partyMembers.Clear();
-                else
-                    _machinaReader.Game.PublishEvent(new PartyLeaderChanged(EventSource.Machina, currentPartyLead));
 
                 _machinaReader.Game.PublishEvent(new PartyMembersChanged(EventSource.Machina, partyMembers));
             }
