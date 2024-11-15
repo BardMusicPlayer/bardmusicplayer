@@ -23,8 +23,11 @@ internal partial class Packet
         {
             if (otherActorId != myActorId) return;
 
-            var partyLeader = BitConverter.ToUInt32(message, 40);
-            if (!ActorIdTools.RangeOkay(partyLeader) || BitConverter.ToUInt32(message, 44) != 0)
+            if (BitConverter.ToUInt32(message, 28) != 0 ||
+                    BitConverter.ToUInt32(message, 32) != 0 ||
+                    BitConverter.ToUInt32(message, 36) != 0 ||
+                    BitConverter.ToUInt32(message, 40) != 0 ||
+                    BitConverter.ToUInt32(message, 44) != 0)
                 return;
 
             _machinaReader.Game.PublishEvent(new EnsembleStopped(EventSource.Machina));

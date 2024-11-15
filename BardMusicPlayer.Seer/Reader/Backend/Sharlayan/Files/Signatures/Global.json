@@ -58,7 +58,7 @@
             0,
             0
         ],
-        "Value": "41807D00000F85????????4889B424????????488D0D"
+        "Value": "0F85????????4C89642450488D0D"
     },
     {
         "ASMSignature": true,
@@ -71,14 +71,14 @@
         "Value": "33D2E8????????488b0d"
     },
     {
+        //Fallback
         "ASMSignature": true,
         "Key": "WORLD",
         "PointerPath": [
-            -13,
             0,
-            -78
+            5499988
         ],
-        "Value": "40534883EC40488B05********488BD98B401485C00F"
+        "Value": "FFC08983????????83F8020F84????????4C8D35"
     }
     // END BMP
 ]
