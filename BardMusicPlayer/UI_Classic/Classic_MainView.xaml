@@ -545,6 +545,7 @@
                     <TextBox Grid.Column="0" x:Name="SpeedTxtNum" Padding="0" Margin="0,0,-16,0"
                              x:FieldModifier="private" Text="100%" TextChanged="speed_txtNum_TextChanged" 
                              TextAlignment="Center" FontSize="14"
+                             KeyUp="speed_txtNum_KeyUp"
                              HorizontalAlignment="Right" Width="55" Height="25" VerticalAlignment="Center"
                              VerticalContentAlignment="Center" />
                     <Grid Grid.Column="1" Margin="0,0,-23,0">

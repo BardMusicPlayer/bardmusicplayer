@@ -416,6 +416,20 @@ public partial class ClassicMainView
         }
     }
 
+
+    private void speed_txtNum_KeyUp(object sender, KeyEventArgs e)
+    {
+        switch (e.Key)
+        {
+            case Key.Up:
+                speed_cmdUp_Click(sender, e);
+                break;
+            case Key.Down:
+                speed_cmdDown_Click(sender, e);
+                break;
+        }
+    }
+
     private void speed_txtNum_TextChanged(object sender, TextChangedEventArgs e)
     {
         if (SpeedTxtNum == null)
