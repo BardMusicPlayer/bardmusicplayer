@@ -69,9 +69,6 @@ internal class MachinaReaderBackend : IReaderBackend
                         case 88:
                             _packet.Size88(timeStamp, otherActorId, myActorId, message); //Handles EnsembleStart --DALAMUD
                             break;
-                        case 656:
-                            _packet.Size656(timeStamp, otherActorId, myActorId, message); //Handles old Homeworld and Playername --DALAMUD
-                            break;
                         case 664:
                             _packet.Size664(timeStamp, otherActorId, myActorId, message); //Handles Homeworld and Playername --DALAMUD
                             break;
