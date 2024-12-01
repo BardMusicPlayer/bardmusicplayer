@@ -35,7 +35,8 @@ public partial class ClassicMainView
         //Local orchestra
         AutoEquipBox.IsChecked         = BmpPigeonhole.Instance.AutoEquipBards;
         KeepTrackSettingsBox.IsChecked = BmpPigeonhole.Instance.EnsembleKeepTrackSetting;
-        
+        DisableAutoReadyCheckBox.IsChecked = BmpPigeonhole.Instance.AutoReadyCheck;
+
         //UI
         // MidiLoaderSelection.SelectedIndex = BmpPigeonhole.Instance.MidiLoaderType;
         EnableDarkMode.IsChecked = BmpPigeonhole.Instance.DarkStyle;
@@ -101,8 +102,13 @@ public partial class ClassicMainView
     {
         BmpPigeonhole.Instance.EnsembleKeepTrackSetting = KeepTrackSettingsBox.IsChecked ?? false;
     }
+
+    private void DisableAutoReadyCheckBox_Checked(object sender, RoutedEventArgs e)
+    {
+        BmpPigeonhole.Instance.AutoReadyCheck = DisableAutoReadyCheckBox.IsChecked ?? false;
+    }
     #endregion
-    
+
     #region UI
     // private void MidiLoader_SelectionChanged(object sender, SelectionChangedEventArgs e)
     // {

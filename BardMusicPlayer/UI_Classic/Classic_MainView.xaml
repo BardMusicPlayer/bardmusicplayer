@@ -211,6 +211,10 @@
                                     <Label Margin="10,29,0,0" Grid.Row="2" Content="Autostart"
                                            HorizontalAlignment="Left"
                                            ToolTip="{StaticResource LocalOrchestraAutoStart}" />
+                                    <CheckBox Margin="10,3,0,33" Grid.Row="2" x:Name="DisableAutoReadyCheckBox"
+                                            Content="Disable Auto-ReadyCheck" Unchecked="DisableAutoReadyCheckBox_Checked"
+                                            Checked="DisableAutoReadyCheckBox_Checked"
+                                            ToolTip="{StaticResource LocalOrchestraAutoReadyCheck}" />
                                     <ComboBox Margin="90,28,0,0" Grid.Row="2" x:Name="AutostartSource"
                                               SelectionChanged="Autostart_Source_SelectionChanged"
                                               HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -616,7 +620,6 @@
                         Content="Send Ensemble"
                         Padding="0" Margin="0,0,0,0"
                         Click="RdyCheck_Click" />
-                <TextBlock Text="Aki's Code!!!!" Grid.Column="2" Margin="134,0,-134,0"></TextBlock>
             </Grid>
             <Grid Grid.Row="3" Grid.Column="2">
                 <Button Grid.Column="0" Content="All Tracks" x:Name="AllTracksButton" Click="all_tracks_button_Click"
