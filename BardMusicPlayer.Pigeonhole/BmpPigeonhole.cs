@@ -103,6 +103,11 @@ public class BmpPigeonhole : JsonSettings.JsonSettings
     public virtual bool EnsembleKeepTrackSetting { get; set; }
 
     /// <summary>
+    /// Auto Ready Check
+    /// </summary>
+    public virtual bool AutoReadyCheck { get; set; }
+
+    /// <summary>
     /// ignores the progchange
     /// </summary>
     public virtual bool IgnoreProgChange { get; set; }

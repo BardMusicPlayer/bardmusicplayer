@@ -491,10 +491,12 @@ public class Performer : INotifyPropertyChanged
             DalamudBridge.DalamudBridge.Instance.ActionToQueue(new DalamudBridgeCommandStruct { messageType = MessageType.AcceptReply, game = game, BoolData = true });
             return;
         }
-
-        _hook.SendSyncKeybind(game.NavigationMenuKeys[NavigationMenuKey.OK]);
-        Task.Delay(200);
-        _hook.SendSyncKeybind(game.NavigationMenuKeys[NavigationMenuKey.OK]);
+        if (!BmpPigeonhole.Instance.AutoReadyCheck)
+        {
+            _hook.SendSyncKeybind(game.NavigationMenuKeys[NavigationMenuKey.OK]);
+            Task.Delay(200);
+            _hook.SendSyncKeybind(game.NavigationMenuKeys[NavigationMenuKey.OK]);
+        }
     }
 
     /// <summary>

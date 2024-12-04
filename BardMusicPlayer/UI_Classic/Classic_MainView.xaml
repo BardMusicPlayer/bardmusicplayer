@@ -211,6 +211,10 @@
                                     <Label Margin="10,29,0,0" Grid.Row="2" Content="Autostart"
                                            HorizontalAlignment="Left"
                                            ToolTip="{StaticResource LocalOrchestraAutoStart}" />
+                                    <CheckBox Margin="10,3,0,33" Grid.Row="2" x:Name="DisableAutoReadyCheckBox"
+                                            Content="Disable Auto-ReadyCheck" Unchecked="DisableAutoReadyCheckBox_Checked"
+                                            Checked="DisableAutoReadyCheckBox_Checked"
+                                            ToolTip="{StaticResource LocalOrchestraAutoReadyCheck}" />
                                     <ComboBox Margin="90,28,0,0" Grid.Row="2" x:Name="AutostartSource"
                                               SelectionChanged="Autostart_Source_SelectionChanged"
                                               HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -545,6 +549,7 @@
                     <TextBox Grid.Column="0" x:Name="SpeedTxtNum" Padding="0" Margin="0,0,-16,0"
                              x:FieldModifier="private" Text="100%" TextChanged="speed_txtNum_TextChanged" 
                              TextAlignment="Center" FontSize="14"
+                             KeyUp="speed_txtNum_KeyUp"
                              HorizontalAlignment="Right" Width="55" Height="25" VerticalAlignment="Center"
                              VerticalContentAlignment="Center" />
                     <Grid Grid.Column="1" Margin="0,0,-23,0">
